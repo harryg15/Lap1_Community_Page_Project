@@ -24,6 +24,24 @@ app.get("/data/:id", (req, res) => {
     });
 })
 
+app.get("/comments/:id", (req, res) => {
+    const id = parseInt(req.params.id);
+    console.log(id)
+    fs.readFile(`./json files/comments/${id}.json`, "utf8", (err, jsonString) => {
+    if (err) {
+        res.send("Error reading file from disk");
+    }
+    try {
+        const data = JSON.parse(jsonString);
+        res.send(data)
+    } catch (err) {
+        console.log("Error parsing JSON string");
+    }
+    });
+})
+
+
+
 // const customer = {
 //     name: "Newbie Co.",
 //     order_count: 0,
