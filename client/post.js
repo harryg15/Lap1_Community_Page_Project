@@ -2,6 +2,7 @@
     let APIKEY = "y64uvNhCUvczuf2GxjoZnEJW5C3IxlV1";
     // you will need to get your own API KEY
     // https://developers.giphy.com/dashboard/
+  
     document.addEventListener("DOMContentLoaded", init);
     function init() {
         document.getElementById("gif-search-btn").addEventListener("click", ev => {
@@ -21,6 +22,8 @@
                     img.src = content.data[0].images.downsized.url;
                     img.alt = content.data[0].title;
                     fig.appendChild(img);
+
+
                     let out = document.querySelector(".out");
                     out.insertAdjacentElement("afterbegin", fig);
                     document.querySelector("#giphy").value = "";
@@ -30,14 +33,14 @@
                     document.getElementById("giphy").style.display = 'none';
                     document.getElementById("gif-search-btn").style.display = "none";
                     let btn = document.createElement("button")
-                    btn.textContent = "Change gif";
+                    btn.textContent = "Change Gif";
                     btn.id = "gif-change-btn"
                     let createChange = document.getElementById("div-change-btn")
                     createChange.appendChild(btn)
                     document.getElementById("giphy-title").style.display = "none";
 
 
-                    document.getElementById("gif-search-btn").addEventListener("click", ev => {
+                    document.getElementById("gif-change-btn").addEventListener("click", ev => {
                         ev.preventDefault();
                         reverseChanges()
                     })
@@ -46,14 +49,20 @@
                     console.error(err);
                 });
         });
+    
     }
 
 
     function reverseChanges() {
-        document.getElementById("gap").style.display = 'unset';
-        document.getElementById("giphy").style.display = 'unset';
+        document.getElementById("gif-change-btn").remove()
+        document.getElementById("gap").style.display = 'block';
+        document.getElementById("giphy").style.display = 'inline-block';
         document.getElementById("gif-search-btn").style.display = 'unset';
-        document.getElementById("giphy-title").style.display = "unset";
+        document.getElementById("giphy-title").style.display = "block";
         document.querySelector(".out").remove()
-        init()
+        let outer = document.getElementById("outer-div-out");
+        let createOut = document.createElement("div");
+        createOut.classList = "out";
+        outer.appendChild(createOut)
     }
+

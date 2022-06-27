@@ -49,20 +49,22 @@
         <form>
             <h1>Create Post</h1>
             <p>Title</p>
-            <textarea id="title-message" placeholder="Give your post a topic..."></textarea>
+            <textarea id="title-message" placeholder="Give your post a topic..." required></textarea>
 
             <p>Blog Post</p>
-            <textarea id="blog-message" placeholder="Write Something..."></textarea>
+            <textarea id="blog-message" placeholder="Write Something... (max. 3000 characters)" maxlength="3000" required></textarea>
 
             <p id="giphy-title">Giphy</p>
             <textarea id="giphy" placeholder="Type a phrase to search a relevant gif..."></textarea>
 
                 <button id="gif-search-btn">Search Gif</button>
-
+            
             <div id="div-change-btn"></div>
             <p id="gap"></p>
 
+            <div id="outer-div-out">
             <div class="out"></div>
+            </div>
             <button class="button"><span>Submit</span></button>
 
         </form>
