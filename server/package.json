@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll",
-    "dev": "nodemon app.js"
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,7 @@
     "jest": "^28.1.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.18"
+    "nodemon": "^2.0.18",
+    "supertest": "^6.2.3"
   }
 }
