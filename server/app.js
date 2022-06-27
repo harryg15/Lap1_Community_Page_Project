@@ -13,13 +13,13 @@ app.get("/data/:id", (req, res) => {
     const id = parseInt(req.params.id);
     fs.readFile(`./json files/${id}.json`, "utf8", (err, jsonString) => {
     if (err) {
-        console.log("Error reading file from disk:", err);
+        res.send("Error reading file from disk");
     }
     try {
         const data = JSON.parse(jsonString);
         res.send(data)
     } catch (err) {
-        console.log("Error parsing JSON string:", err);
+        console.log("Error parsing JSON string");
     }
     });
 })
