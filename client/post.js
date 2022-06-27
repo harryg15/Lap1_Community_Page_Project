@@ -46,7 +46,7 @@
                     })
                 })
                 .catch(err => {
-                    console.error(err);
+                    console.error("Couldn't find search term");
                 });
         });
     
