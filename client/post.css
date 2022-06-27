@@ -1,0 +1,203 @@
+/*For Previous Home Page Styling*/
+
+@import url("harry.css");
+
+
+
+
+/*Create A Post Page*/
+
+
+    #formbox {
+        height: 750px;
+        width: 500px;
+        display: block;
+        margin: 0;
+        text-align: center;
+        border: solid rgb(85, 85, 85);
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #141b25;
+        border-radius: 12px;
+    }
+
+    #innerform {
+        height: 650px;
+        width: 450px;
+        display: block;
+        text-align: center;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+    }
+
+    #textarea-hidden {
+            color: #212c3b;
+    }
+
+    #blog-message {
+        width: 98%;
+        padding: .1px;
+        height: 150px;
+        border-radius: 5px;
+        font-family: 'Montserrat', sans-serif;
+        background-color: #212c3b;
+        box-shadow: none;
+        padding-left: 5px;
+        padding-top: 5px;
+    }
+
+    #title-message {
+        width: 98%;
+        height: 40px;
+        padding: .1px;
+        border-radius: 5px;
+        font-family: 'Montserrat', sans-serif;
+        background-color: #212c3b;
+        box-shadow: none;
+        padding-left: 5px;
+        padding-top: 5px;
+    }
+
+    #giphy {
+        width: 98%;
+        padding: .1px;
+        height: 40px;
+        border-radius: 5px;
+        font-family: 'Montserrat', sans-serif;
+        background-color: #212c3b;
+        box-shadow: none;
+        padding-left: 5px;
+        padding-top: 5px;
+    }
+
+    #gap {
+        padding-top: 50px;
+    }
+
+    p {
+        color: rgb(233, 231, 231);
+        text-align: left;
+        font-family: "AstroSpace", sans-serif;
+        padding-top: 20px;
+        
+    }
+
+    textarea {
+        color: rgb(233, 231, 231);
+        
+    }
+
+    /*Submit Button*/
+
+    .button {
+        border-radius: 50px;
+        background-color: rgb(9, 164, 115);
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 28px;
+        padding: 20px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        transform: scale(0.75);
+      }
+      
+      .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+      
+      .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+      
+      .button:hover span {
+        padding-right: 25px;
+      }
+      
+      .button:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+
+      #gap {
+        padding-top: 5px;
+      }
+
+      h1 {
+        color: rgb(233, 231, 231);
+        text-align: center;
+        font-family: "AstroSpace", sans-serif;
+      }
+    
+      .out img {
+        max-width: 200px;
+        max-height: 150px;
+      }
+
+      #gif-search-btn {
+        color: white;
+        text-decoration: none;
+        border: none;
+        font-size: 15px;
+        transition: all 0.35s linear 0s;
+        padding: 7px 18px;
+        background-color: rgb(106, 90, 255);
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      #gif-search-btn:hover {
+        background-color: #047e85;
+        color: white;
+        border-bottom: none;
+        animation: jiggle 0.55s ease-in infinite;
+    }
+
+    #gif-change-btn {
+        color: white;
+        text-decoration: none;
+        border: none;
+        font-size: 15px;
+        transition: all 0.35s linear 0s;
+        padding: 7px 18px;
+        background-color: rgb(106, 90, 255);
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      #gif-change-btn:hover {
+        background-color: #047e85;
+        color: white;
+        border-bottom: none;
+        animation: jiggle 0.55s ease-in infinite;
+    }
+
+    #transform-search-gif:hover {
+        background-color: white;
+    }
+
+     @keyframes jiggle {
+        0% { transform: rotate(0deg); }
+        25% { transform: rotate(2deg); }
+        50% { transform: rotate(0deg); }
+        75% { transform: rotate(-2deg); }
+        100% { transform: rotate(0deg); }
+     }
+
+
