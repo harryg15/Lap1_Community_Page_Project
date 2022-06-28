@@ -21,6 +21,7 @@
                     let img = document.createElement("img");
                     img.src = content.data[0].images.downsized.url;
                     img.alt = content.data[0].title;
+                    img.id = "gifFetched"
                     fig.appendChild(img);
 
 
@@ -66,3 +67,29 @@
         outer.appendChild(createOut)
     }
 
+const button = document.getElementById("mainButton")
+
+button.addEventListener("click", (e) =>{
+    e.preventDefault()
+    let title = document.getElementById("title-message").value
+    let text = document.getElementById("blog-message").value
+    let giphy = document.getElementById("gifFetched").src
+    let array ={title: "", text: "", giphy: "", emoji1: "", emoji2: "", emoji3: ""}
+    array.title = title
+    array.text = text
+    console.log(giphy)
+    if (giphy != "http://127.0.0.1:5500/client/post.html?"){
+        array.giphy = giphy
+    }
+    fetchFunction(array)
+});
+
+async function fetchFunction (array) {
+    options = {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(array)
+    }
+    await fetch("http://localhost:3000/newpost", options)
+    window.location.href="index.html"
+}
