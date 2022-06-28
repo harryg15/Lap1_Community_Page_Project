@@ -200,4 +200,23 @@
         100% { transform: rotate(0deg); }
      }
 
+         @media (max-height: 1000px) {
+      #formbox {
+          height: 500px;
+      }
+      .out img {
+        height: 110px;
+      }
+  }
+
+  @media (max-height: 800px) {
+    #formbox {
+      transform: scale(0.75);
+      margin: 0;
+      position: absolute;
+      top: 20%;
+      left: 10%;
+      
+    }
+  }
 
