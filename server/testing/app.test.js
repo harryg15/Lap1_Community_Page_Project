@@ -53,4 +53,25 @@ describe ("Api server", () => {
             .expect(201)
         })
     })
+
+    // describe("Checking failed posts", () =>{
+    //     test("new json file should return fail error message for post", (done) => {
+    //         request(api)
+    //         .post("/newpost")
+    //         .send({
+    //             title: "Mega Corp",
+    //             text: "Mega",
+    //             giphy : "xT4uQulxzV39haRFjG",
+    //             emojis: "👍👍👍👍"})
+    //         .expect(404, done)
+    //     })
+        // test("new json file should return fail error message for comment", (done) => {
+        //     request(api)
+        //     .post("/newcomment")
+        //     .send({
+        //         comment: "Mega Corp",
+        //         id: "false"})
+        //     .expect(404, done)
+        // })
+    // })
 })

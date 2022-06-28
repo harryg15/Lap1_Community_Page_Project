@@ -70,14 +70,14 @@ app.post("/newpost", async (req, res) => {
 
     fs.writeFile(`./json files/${fileName}.json`, jsonString, err => {
         if (err) {
-            return('Error writing file', err)
+            res.status(404).send()
         } else {
-            return('Successfully wrote file')
+            res.status(201).send()
         }
     })
     const dirpath = `./json files/comments/${fileName}`
     await fs.promises.mkdir(dirpath, { recursive: true })
-    res.status(201).send()
+    
 })
 
 app.post("/newcomment", async (req, res) => {
@@ -90,13 +90,12 @@ app.post("/newcomment", async (req, res) => {
     if (/^\s*$/.test(checkEmpty) != true){
     fs.writeFile(`./json files/comments/${id}/${fileName}.json`, jsonString, err => {
         if (err) {
-            return('Error writing file', err)
+            res.status(404).send()
         } else {
-            return('Successfully wrote file')
+            res.status(201).send()
         }
     })
     }
-    res.status(201).send()
 })
 
 
