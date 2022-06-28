@@ -43,7 +43,7 @@ header {
 }
 
 
-.links {
+ .links {
     list-style: none;
     float: right;
     line-height: 90px;
@@ -54,7 +54,7 @@ header {
 .links li {
     display: inline-block;
     margin: 0 20px;
-}
+} 
 
 /*Below is the 'Create A Post' button styling*/
 

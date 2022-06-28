@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create A Post</title>
+    <link rel="stylesheet" href="./post.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <script defer src="./post.js"></script>
+
+</head>
+<body>
+    <header>
+        <!--Navbar-->
+        <nav class="navbar">
+            <!--Responsive Menu Icon-->
+            <input type="checkbox" id="isChecked" />
+            <label for="isChecked" class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <!--CONNEKT Logo-->
+            <a href="./index.html" class="logo">Connekt</a>
+            <!--Your Feed & Create A Post & Dark-Mode Toggle-->
+            <ul class="links">
+                <!-- <li>
+                    <input type="checkbox" class="dark-light" id="dark-light">
+                    <label for="dark-light" class="label">
+                        <div class="ball"></div>
+                    </label>
+                </li> -->
+                <li><a href="./index.html" class="feed">Your Feed</a></li>
+                <li><a href="./post.html" class="create">Create A Post +</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div>
+        <form action="/action_page.php">
+          <label for="fname" id="textarea-hidden">Textarea-Hidden</label>
+        </form>
+      </div>
+     <!--Create Post Section--> 
+<div id="formbox">
+    <div id="innerform">
+        <form>
+            <h1>Create Post</h1>
+            <p>Title</p>
+            <textarea id="title-message" placeholder="Give your post a topic..." required></textarea>
+
+            <p>Blog Post</p>
+            <textarea id="blog-message" placeholder="Write Something... (max. 3000 characters)" maxlength="3000" required></textarea>
+
+            <p id="giphy-title">Giphy</p>
+            <textarea id="giphy" placeholder="Type a phrase to search a relevant gif..."></textarea>
+
+                <button id="gif-search-btn">Search Gif</button>
+            
+            <div id="div-change-btn"></div>
+            <p id="gap"></p>
+
+            <div id="outer-div-out">
+            <div class="out"></div>
+            </div>
+            <button class="button"><span>Submit</span></button>
+
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>
