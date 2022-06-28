@@ -22,49 +22,83 @@ app.get("/data", (req, res) => {
 
 app.get("/data/:id", (req, res) => {
     const id = parseInt(req.params.id);
-    fs.readFile(`./json files/${id}.json`, "utf8", (err, jsonString) => {
-    if (err) {
-        res.send("Error reading file from disk");
-    }
-    try {
-        const data = JSON.parse(jsonString);
-        res.send(data)
-    } catch (err) {
-        console.log("Error parsing JSON string");
-    }
+    let jsonArray = []
+    const jsonsInDir = fs.readdirSync(`./json files/comments/${id}`).filter(file => path.extname(file) === '.json');
+    jsonsInDir.forEach(file => {
+        const fileData = fs.readFileSync(path.join(`./json files/comments/${id}`, file));
+        json = JSON.parse(fileData.toString());
+        jsonArray.push(json)
     });
+    res.send(jsonArray)
 })
 
-app.get("/comments/:id", (req, res) => {
-    const id = parseInt(req.params.id);
-    console.log(id)
-    fs.readFile(`./json files/comments/${id}.json`, "utf8", (err, jsonString) => {
-    if (err) {
-        res.send("Error reading file from disk");
-    }
-    try {
-        const data = JSON.parse(jsonString);
-        res.send(data)
-    } catch (err) {
-        console.log("Error parsing JSON string");
-    }
-    });
-})
+// app.get("/data/:id", (req, res) => {
+//     const id = parseInt(req.params.id);
+//     fs.readFile(`./json files/${id}.json`, "utf8", (err, jsonString) => {
+//     if (err) {
+//         res.send("Error reading file from disk");
+//     }
+//     try {
+//         const data = JSON.parse(jsonString);
+//         res.send(data)
+//     } catch (err) {
+//         console.log("Error parsing JSON string");
+//     }
+//     });
+// })
+
+// app.get("/comments/:id", (req, res) => {
+//     const id = parseInt(req.params.id);
+//     console.log(id)
+//     fs.readFile(`./json files/comments/${id}.json`, "utf8", (err, jsonString) => {
+//     if (err) {
+//         res.send("Error reading file from disk");
+//     }
+//     try {
+//         const data = JSON.parse(jsonString);
+//         res.send(data)
+//     } catch (err) {
+//         console.log("Error parsing JSON string");
+//     }
+//     });
+// })
 
 app.post("/newpost", async (req, res) => {
     const data = await req.body;
-    console.log(req.body)
     const jsonString = JSON.stringify(data)
     const fileName = fs.readdirSync("./json files").length
 
     fs.writeFile(`./json files/${fileName}.json`, jsonString, err => {
         if (err) {
-            console.log('Error writing file', err)
+            return('Error writing file', err)
         } else {
-            console.log('Successfully wrote file')
+            return('Successfully wrote file')
         }
     })
+    const dirpath = `./json files/comments/${fileName}`
+    await fs.promises.mkdir(dirpath, { recursive: true })
     res.status(201).send()
 })
+
+app.post("/newcomment", async (req, res) => {
+    const data = await req.body;
+    const id = data.id
+    delete data.id
+    const checkEmpty = data.comment
+    const jsonString = JSON.stringify(data)
+    const fileName = fs.readdirSync(`./json files/comments/${id}`).length + 1
+    if (/^\s*$/.test(checkEmpty) != true){
+    fs.writeFile(`./json files/comments/${id}/${fileName}.json`, jsonString, err => {
+        if (err) {
+            return('Error writing file', err)
+        } else {
+            return('Successfully wrote file')
+        }
+    })
+    }
+    res.status(201).send()
+})
+
+
 
 module.exports = app;

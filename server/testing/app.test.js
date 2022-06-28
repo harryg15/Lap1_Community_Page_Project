@@ -15,30 +15,42 @@ describe ("Api server", () => {
     })
 
     describe("Checking if pages load", () =>{
+        test("responds with status of 200 at /data", (done) => {
+            request(api).get("/data").expect(200, done)
+        })
         test("responds with status of 200 at /data/1", (done) => {
             request(api).get("/data/1").expect(200, done)
         })
-        test("responds with status of 200 at /comments/1001", (done) => {
-            request(api).get("/comments/1001").expect(200, done)
-        })
     })
 
-    describe("Checking values of pages", () =>{
-        test("gets correct data at /data/1", (done) => {
-            request(api).get("/data/1").expect({
-                "text": "Mega Corp",
-                "giphy" : "xT4uQulxzV39haRFjG",
-                "emojis": "👍👍👍👍"
-            }, done)
-        })
-        test("gets correct data at /comments/1001", (done) => {
-            request(api).get("/comments/1001").expect({"comment": "hello"}, done)
-        })
-    })
-
-    // describe("Checking new page", () =>{
-    //     test("new json file should be made", (done) => {
-    //         request(api).post("/newpost").expect(201, done)
+    // describe("Checking values of pages", () =>{
+    //     test("gets correct data at /data/1", (done) => {
+    //         request(api).get("/data/1").expect({
+    //             "text": "Mega Corp",
+    //             "giphy" : "xT4uQulxzV39haRFjG",
+    //             "emojis": "👍👍👍👍"
+    //         }, done)
     //     })
     // })
+
+    describe("Checking posts", () =>{
+        test("new json file should be made for post", async () => {
+            await request(api)
+            .post("/newpost")
+            .send({
+                title: "Mega Corp",
+                text: "Mega",
+                giphy : "xT4uQulxzV39haRFjG",
+                emojis: "👍👍👍👍"})
+            .expect(201)
+        })
+        test("new json file should be made for comment", async () => {
+            await request(api)
+            .post("/newcomment")
+            .send({
+                comment: "Mega Corp",
+                id: "1"})
+            .expect(201)
+        })
+    })
 })
