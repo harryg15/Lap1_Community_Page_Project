@@ -74,7 +74,7 @@ button.addEventListener("click", (e) =>{
     let title = document.getElementById("title-message").value
     let text = document.getElementById("blog-message").value
     let giphy = document.getElementById("gifFetched").src
-    let array ={title: "", text: "", giphy: "", emoji1: "", emoji2: "", emoji3: ""}
+    let array ={title: "", text: "", giphy: "", emoji1: "0", emoji2: "0", emoji3: "0"}
     array.title = title
     array.text = text
     console.log(giphy)

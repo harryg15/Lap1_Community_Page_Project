@@ -10,6 +10,7 @@ fetch("http://localhost:3000/data/")
             const newDiv = document.createElement("div")
             let id = i + 1
             newDiv.id = id
+            newDiv.classList = "mainDiv"
             const newTitle = document.createElement("h1")
             newTitle.textContent = result[i].title
             const newText = document.createElement("p")
@@ -28,19 +29,18 @@ fetch("http://localhost:3000/data/")
             const emojiButton1Select = document.getElementById(`emoji${id}`)
             emojiButton1Select.addEventListener("click", () =>{
                 if(counter%2 == 0){
-                    emoji1Value++
+                    emoji1Value--
                     counter++
                     sessionStorage.setItem("counter", counter);
 
                 } else{
-                    emoji1Value--
+                    emoji1Value++
                     counter++
                     sessionStorage.setItem("counter", counter);
 
                 }
                 
-
-                const emojiArray = {title: "", text: "", giphy: "", emoji1: "", emoji2: "", emoji3: "", id: "" }
+                const emojiArray = {title: "", text: "", giphy: "", emoji1: "0", emoji2: "0", emoji3: "0", id: "" }
                 emojiArray.title = result[i].title
                 emojiArray.text = result[i].text
                 emojiArray.giphy = result[i].giphy
@@ -58,13 +58,12 @@ fetch("http://localhost:3000/data/")
             await fetch("http://localhost:3000/newemoji", options)
             }
 
-
-
             fetch(`http://localhost:3000/data/${id}`)
                 .then((resp) => resp.json())
                 .then((result) => {
                     const post = document.getElementById(`${id}`)
                     const newDiv = document.createElement("div")
+                    newDiv.classList = "commentClass"
                     for (let i = 0; i<result.length; i++){
                         const newComment = document.createElement("p")
                         newComment.textContent = result[i].comment
@@ -72,6 +71,7 @@ fetch("http://localhost:3000/data/")
                     }
                     const newBox = document.createElement("input")
                     newBox.id = `a${id}`
+                    newBox.classList = "commentInput"
                     const newSubmit = document.createElement("button")
                     newSubmit.id = `b${id}`
                     newSubmit.textContent = "submit"
@@ -96,8 +96,6 @@ fetch("http://localhost:3000/data/")
                     await fetch("http://localhost:3000/newcomment", options)
                     }
             })
-            
-            
         }
     })
 
