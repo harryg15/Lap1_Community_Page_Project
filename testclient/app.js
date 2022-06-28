@@ -1,5 +1,8 @@
 const section = document.querySelector("section")
 
+let counter = 0
+counter = sessionStorage.getItem("counter");
+
 fetch("http://localhost:3000/data/")
     .then((resp) => resp.json())
     .then((result) => {
@@ -11,9 +14,52 @@ fetch("http://localhost:3000/data/")
             newTitle.textContent = result[i].title
             const newText = document.createElement("p")
             newText.textContent = result[i].text
+            const newGif = document.createElement("img")
+            newGif.src = result[i].giphy
             
-            newDiv.append(newTitle, newText)
+            const emojiButton1 = document.createElement("button")
+            emojiButton1.id = `emoji${id}`
+            let emoji1Value = result[i].emoji1
+            emojiButton1.textContent = emoji1Value + "👍"
+
+            newDiv.append(newTitle, newText, newGif, emojiButton1)
             section.append(newDiv)
+
+            const emojiButton1Select = document.getElementById(`emoji${id}`)
+            emojiButton1Select.addEventListener("click", () =>{
+                if(counter%2 == 0){
+                    emoji1Value++
+                    counter++
+                    sessionStorage.setItem("counter", counter);
+
+                } else{
+                    emoji1Value--
+                    counter++
+                    sessionStorage.setItem("counter", counter);
+
+                }
+                
+
+                const emojiArray = {title: "", text: "", giphy: "", emoji1: "", emoji2: "", emoji3: "", id: "" }
+                emojiArray.title = result[i].title
+                emojiArray.text = result[i].text
+                emojiArray.giphy = result[i].giphy
+                emojiArray.emoji1 = emoji1Value
+                emojiArray.id = id
+                postEmoji(emojiArray)
+            })
+
+            async function postEmoji (emojiArray) {
+                options = {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(emojiArray)
+                }
+            await fetch("http://localhost:3000/newemoji", options)
+            }
+
+
+
             fetch(`http://localhost:3000/data/${id}`)
                 .then((resp) => resp.json())
                 .then((result) => {
@@ -28,6 +74,7 @@ fetch("http://localhost:3000/data/")
                     newBox.id = `a${id}`
                     const newSubmit = document.createElement("button")
                     newSubmit.id = `b${id}`
+                    newSubmit.textContent = "submit"
                     newDiv.append(newBox, newSubmit)
                     post.append(newDiv)
                     const button = document.getElementById(`b${id}`)
@@ -37,7 +84,6 @@ fetch("http://localhost:3000/data/")
                         let array ={comment: "", id: ""}
                         array.comment = commentID.value
                         array.id = id
-                        console.log(array)
                         fetchFunction(array)
                     }); 
             

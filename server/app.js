@@ -98,6 +98,19 @@ app.post("/newcomment", async (req, res) => {
     }
 })
 
+app.post("/newemoji", async (req, res) => {
+    const data = await req.body;
+    const id = data.id
+    delete data.id
+    const jsonString = JSON.stringify(data)
+    fs.writeFile(`./json files/${id}.json`, jsonString, err => {
+        if (err) {
+            res.status(404).send()
+        } else {
+            res.status(201).send()
+        }
+    })
+})
 
 
 module.exports = app;
