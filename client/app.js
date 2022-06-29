@@ -12,6 +12,7 @@ fetch("https://murmuring-crag-50704.herokuapp.com/data")
             const newTitle = document.createElement("h1")
             newTitle.textContent = result[i].title
             const newText = document.createElement("p")
+            newText.classList = "description"
             newText.textContent = result[i].text
             const newGif = document.createElement("img")
             newGif.src = result[i].giphy
@@ -109,9 +110,13 @@ fetch("https://murmuring-crag-50704.herokuapp.com/data")
                     const newBox = document.createElement("textArea")
                     newBox.id = `a${id}`
                     newBox.classList = "commentInput"
+                    newBox.placeholder = "Any thoughts? Post a comment here..."
                     const newSubmit = document.createElement("button")
+                    const spanSubmit = document.createElement("span")
                     newSubmit.id = `b${id}`
-                    newSubmit.textContent = "submit"
+                    spanSubmit.textContent = "Comment"
+                    newSubmit.classList = "newSubmit"
+                    newSubmit.appendChild(spanSubmit)
                     newDiv.append(newBox, newSubmit)
                     post.append(newDiv)
                     const button = document.getElementById(`b${id}`)
