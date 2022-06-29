@@ -1,13 +1,7 @@
-const section = document.querySelector("section")
+const section = document.querySelector("div")
 
 
-// let counter2 = 0
-// let counter3 = 0
-
-// counter2 = sessionStorage.getItem("counter2");
-// counter3 = sessionStorage.getItem("counter3");
-
-fetch("http://localhost:3000/data/")
+fetch("https://murmuring-crag-50704.herokuapp.com/data")
     .then((resp) => resp.json())
     .then((result) => {
         for (let i = result.length-1; i>=0; i--){
@@ -26,21 +20,17 @@ fetch("http://localhost:3000/data/")
             emojiButton1.id = `1emoji${id}`
             let emoji1Value = result[i].emoji1
             emojiButton1.textContent = emoji1Value + "👍"
-
             const emojiButton2 = document.createElement("button")
             emojiButton2.id = `2emoji${id}`
             let emoji2Value = result[i].emoji2
             emojiButton2.textContent = emoji2Value + "👎"
-
             const emojiButton3 = document.createElement("button")
             emojiButton3.id = `3emoji${id}`
             let emoji3Value = result[i].emoji3
             emojiButton3.textContent = emoji3Value + "⭐"
             
-
             newDiv.append(newTitle, newText, newGif, emojiButton1, emojiButton2, emojiButton3)
             section.append(newDiv)
-
             const emojiButton1Select = document.getElementById(`1emoji${id}`)
             let counter = 0
             counter = sessionStorage.getItem(`counter${id}`);
@@ -49,15 +39,14 @@ fetch("http://localhost:3000/data/")
                     emoji1Value++
                     counter++
                     sessionStorage.setItem(`counter${id}`, counter);
-
                 } else{
                     emoji1Value--
                     counter++
                     sessionStorage.setItem(`counter${id}`, counter);
                 }
+                emojiButton1.textContent = emoji1Value + "👍"
                 postEmoji()
             })
-
             const emojiButton2Select = document.getElementById(`2emoji${id}`)
             let twocounter = 0
             twocounter = sessionStorage.getItem(`twocounter${id}`);
@@ -66,15 +55,14 @@ fetch("http://localhost:3000/data/")
                     emoji2Value++
                     twocounter++
                     sessionStorage.setItem(`twocounter${id}`, twocounter);
-
                 } else{
                     emoji2Value--
                     twocounter++
                     sessionStorage.setItem(`twocounter${id}`, twocounter);
                 }
+                emojiButton2.textContent = emoji2Value + "👎"
                 postEmoji()
             })
-
             const emojiButton3Select = document.getElementById(`3emoji${id}`)
             let threecounter = 0
             threecounter = sessionStorage.getItem(`threecounter${id}`);
@@ -83,15 +71,14 @@ fetch("http://localhost:3000/data/")
                     emoji3Value++
                     threecounter++
                     sessionStorage.setItem(`threecounter${id}`, threecounter);
-
                 } else{
                     emoji3Value--
                     threecounter++
                     sessionStorage.setItem(`threecounter${id}`, threecounter);
                 }
+                emojiButton3.textContent = emoji3Value + "⭐"
                 postEmoji()
             })
-
             async function postEmoji () {
                 const emojiArray = {title: "", text: "", giphy: "", emoji1: "0", emoji2: "0", emoji3: "0", id: "" }
                 emojiArray.title = result[i].title
@@ -106,10 +93,9 @@ fetch("http://localhost:3000/data/")
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify(emojiArray)
                 }
-            await fetch("http://localhost:3000/newemoji", options)
+            await fetch("https://murmuring-crag-50704.herokuapp.com/newemoji", options)
             }
-
-            fetch(`http://localhost:3000/data/${id}`)
+            fetch(`https://murmuring-crag-50704.herokuapp.com/data/${id}`)
                 .then((resp) => resp.json())
                 .then((result) => {
                     const post = document.getElementById(`${id}`)
@@ -120,7 +106,7 @@ fetch("http://localhost:3000/data/")
                         newComment.textContent = result[i].comment
                         newDiv.append(newComment)
                     }
-                    const newBox = document.createElement("input")
+                    const newBox = document.createElement("textArea")
                     newBox.id = `a${id}`
                     newBox.classList = "commentInput"
                     const newSubmit = document.createElement("button")
@@ -135,6 +121,11 @@ fetch("http://localhost:3000/data/")
                         let array ={comment: "", id: ""}
                         array.comment = commentID.value
                         array.id = id
+                        const commentDiv = button.parentNode
+                        const newComment = document.createElement("p")
+                        newComment.textContent = array.comment
+                        commentDiv.insertBefore(newComment, newBox)
+                        newBox.value = ""
                         fetchFunction(array)
                     }); 
             
@@ -144,9 +135,8 @@ fetch("http://localhost:3000/data/")
                             headers: {'Content-Type': 'application/json'},
                             body: JSON.stringify(array)
                         }
-                    await fetch("http://localhost:3000/newcomment", options)
+                    await fetch("https://murmuring-crag-50704.herokuapp.com/newcomment", options)
                     }
             })
         }
     })
-
