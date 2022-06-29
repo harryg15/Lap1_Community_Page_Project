@@ -1,13 +1,6 @@
 const section = document.querySelector("section")
 
-
-// let counter2 = 0
-// let counter3 = 0
-
-// counter2 = sessionStorage.getItem("counter2");
-// counter3 = sessionStorage.getItem("counter3");
-
-fetch("http://localhost:3000/data/")
+fetch("https://murmuring-crag-50704.herokuapp.com/data")
     .then((resp) => resp.json())
     .then((result) => {
         for (let i = result.length-1; i>=0; i--){
@@ -55,6 +48,7 @@ fetch("http://localhost:3000/data/")
                     counter++
                     sessionStorage.setItem(`counter${id}`, counter);
                 }
+                emojiButton1.textContent = emoji1Value + "👍"
                 postEmoji()
             })
 
@@ -72,6 +66,7 @@ fetch("http://localhost:3000/data/")
                     twocounter++
                     sessionStorage.setItem(`twocounter${id}`, twocounter);
                 }
+                emojiButton2.textContent = emoji2Value + "👎"
                 postEmoji()
             })
 
@@ -89,6 +84,7 @@ fetch("http://localhost:3000/data/")
                     threecounter++
                     sessionStorage.setItem(`threecounter${id}`, threecounter);
                 }
+                emojiButton3.textContent = emoji3Value + "⭐"
                 postEmoji()
             })
 
@@ -106,10 +102,10 @@ fetch("http://localhost:3000/data/")
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify(emojiArray)
                 }
-            await fetch("http://localhost:3000/newemoji", options)
+            await fetch("https://murmuring-crag-50704.herokuapp.com/newemoji", options)
             }
 
-            fetch(`http://localhost:3000/data/${id}`)
+            fetch(`https://murmuring-crag-50704.herokuapp.com/data/${id}`)
                 .then((resp) => resp.json())
                 .then((result) => {
                     const post = document.getElementById(`${id}`)
@@ -135,6 +131,13 @@ fetch("http://localhost:3000/data/")
                         let array ={comment: "", id: ""}
                         array.comment = commentID.value
                         array.id = id
+
+                        const commentDiv = button.parentNode
+                        const newComment = document.createElement("p")
+                        newComment.textContent = array.comment
+                        commentDiv.insertBefore(newComment, newBox)
+                        newBox.value = ""
+
                         fetchFunction(array)
                     }); 
             
@@ -144,7 +147,7 @@ fetch("http://localhost:3000/data/")
                             headers: {'Content-Type': 'application/json'},
                             body: JSON.stringify(array)
                         }
-                    await fetch("http://localhost:3000/newcomment", options)
+                    await fetch("https://murmuring-crag-50704.herokuapp.com/newcomment", options)
                     }
             })
         }

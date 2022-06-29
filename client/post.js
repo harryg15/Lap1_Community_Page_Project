@@ -77,11 +77,11 @@ button.addEventListener("click", (e) =>{
     let array ={title: "", text: "", giphy: "", emoji1: "0", emoji2: "0", emoji3: "0"}
     array.title = title
     array.text = text
-    console.log(giphy)
-    if (giphy != "http://127.0.0.1:5500/client/post.html?"){
-        array.giphy = giphy
+    array.giphy = giphy
+    if (/^\s*$/.test(title) != true && /^\s*$/.test(text) != true){
+        fetchFunction(array)
     }
-    fetchFunction(array)
+    
 });
 
 async function fetchFunction (array) {
@@ -90,6 +90,6 @@ async function fetchFunction (array) {
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(array)
     }
-    await fetch("http://localhost:3000/newpost", options)
+    await fetch("https://murmuring-crag-50704.herokuapp.com/newpost", options)
     window.location.href="index.html"
 }
