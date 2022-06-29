@@ -29,9 +29,11 @@ p {
 
 .mainDiv {
     border-style: solid;
-    border-color: white;
+    border-color: rgb(135, 135, 135);
     margin-bottom: 100px;
     background-color: #141b25;
+    border-radius: 20px;
+    
 }
 
 .commentInput {
@@ -39,5 +41,7 @@ p {
 }
 
 img {
-    max-width: 45vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
