@@ -1,17 +1,31 @@
 @import url(./harry.css);
 
-#formbox {
-    height: 750px;
-    width: 500px;
-    display: block;
-    margin: 0;
+.wrapper {
+    display: grid;
+    /* border-style: 15px dashed white; */
+    margin: 10px;
+    padding: 20px;
+    /* grid-template-columns: 1fr 1fr; */
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+    grid-gap: 20px;
+}
+
+.formbox1 {
+    height: 200px;
+    width: 400px;
+    text-align: center; 
+    border: solid rgb(85, 85, 85);
+    background-color: #141b25;
+    border-radius: 50px;
+    color: #ffffff;
+}
+
+.formbox2 {
+    height: 200px;
+    width: 400px; 
     text-align: center;
     border: solid rgb(85, 85, 85);
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background-color: #141b25;
-    border-radius: 12px;
+    border-radius: 50px;
+    color: #ffffff;
 }

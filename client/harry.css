@@ -43,7 +43,7 @@ header {
 }
 
 
- .links {
+.links {
     list-style: none;
     float: right;
     line-height: 90px;
@@ -54,7 +54,7 @@ header {
 .links li {
     display: inline-block;
     margin: 0 20px;
-} 
+}
 
 /*Below is the 'Create A Post' button styling*/
 
@@ -169,16 +169,55 @@ header {
     height: 22px;
 }
 
-.title {
+.title1 {
     color: #ffffff;
     text-align: center;
-    font-size: 55px;
+    font-size: 30px;
     background-color: #212c3b;
     padding: 10px;
     position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 20%;
+    left: 11%;
+    /* transform: translate(-50%, -50%); */
+    opacity: 0.8;
+}
+
+.title2 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 30px;
+    background-color: #212c3b;
+    padding: 10px;
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    /* transform: translate(-50%, -50%); */
+    opacity: 0.8;
+}
+
+.info1 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 30px;
+    background-color: #212c3b;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    /* transform: translate(-50%, -50%); */
+    opacity: 0.8;
+}
+
+.info2 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 30px;
+    background-color: #212c3b;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    right: 3%;
+    /* transform: translate(-50%, -50%); */
     opacity: 0.8;
 }
 
@@ -197,13 +236,16 @@ header {
     bottom: auto;
 }
 
-/* 
+
 .image {
-   width: 100vw;
+    /* width: 100vw;
     object-fit:cover; 
-    padding-bottom: 20px;
-   
-} */
+    padding-bottom: 0px;  */
+    float: left;
+    width: 50%;
+} 
+
+
 
 /* footer */
 
