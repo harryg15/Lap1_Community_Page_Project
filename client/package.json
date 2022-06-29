@@ -1,0 +1,17 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest --watchAll",
+    "dev": "watchify ./index.js -o bundle.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^28.1.2",
+    "watchify": "^4.0.0"
+  }
+}
