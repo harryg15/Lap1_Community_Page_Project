@@ -11,6 +11,7 @@ fetch("https://murmuring-crag-50704.herokuapp.com/data")
             newDiv.classList = "mainDiv"
             const newTitle = document.createElement("h1")
             newTitle.textContent = result[i].title
+            newTitle.classList = "post-title"
             const newText = document.createElement("p")
             newText.classList = "description"
             newText.textContent = result[i].text

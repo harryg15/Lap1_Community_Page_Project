@@ -20,6 +20,10 @@ h1 {
     text-align: center;
 }
 
+.post-title {
+    padding-top: 20px;
+}
+
 #your-feed-title {
     padding-top: 60px;
     padding-bottom: 60px;
