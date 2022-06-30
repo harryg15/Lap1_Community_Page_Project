@@ -117,6 +117,7 @@ header {
         padding-top: 20px;
         right: -100%;
         transition: all 0.5s;
+        z-index: 10;
     }
 
     .links li {
