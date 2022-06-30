@@ -73,7 +73,7 @@ Do you have a story to tell, or a funny joke? Use Connekt to tell others whateve
 - add images to connekt.html
 - add blog page w/ comments
 - responsive wepages
-- emojis added to cards
+- emojis added to counter
 - add comments in post.html
 - style each html page
 - add functionality to hamburger menu
@@ -87,7 +87,7 @@ Do you have a story to tell, or a funny joke? Use Connekt to tell others whateve
 ### Wins
 
 - Fully responsive website working on desktop
-- Working emoji selection on blog posts
+- Can select emojis avaliable on posts
 - Integrating the Giphy API
 - Testing at ?% coverage
 - Sleek style to our posts
@@ -106,10 +106,9 @@ Do you have a story to tell, or a funny joke? Use Connekt to tell others whateve
 
 - Adding a search bar to search for specific posts
 - Have a search results page
-- Add a profanity filter to prevent certain words
-- Integrate profanity filter into the blog preview
 - Add timestamp to comments
 - Show how many remaining characters there are in text area
+- add a wide variety of emojis
 
 ---
 ## Minimum Viable Product
