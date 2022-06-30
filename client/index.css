@@ -6,21 +6,25 @@
     margin: 10px;
     padding: 20px;
     /* grid-template-columns: 1fr 1fr; */
-    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     grid-gap: 20px;
 }
 
 .formbox1 {
-    height: 200px;
+    height: 300px;
     width: 400px;
     text-align: center; 
     border: solid rgb(85, 85, 85);
     background-color: #141b25;
     border-radius: 50px;
     color: #ffffff;
+    position: relative; 
+    left: 150px; 
+    top:30px
+
 }
 
-.formbox2 {
+/* .formbox2 {
     height: 200px;
     width: 400px; 
     text-align: center;
@@ -28,4 +32,4 @@
     background-color: #141b25;
     border-radius: 50px;
     color: #ffffff;
-}
+} */
