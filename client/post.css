@@ -23,7 +23,8 @@ body {
         margin-top: 60px;
         margin-bottom: 10%;
         background-color: #141b25;
-        border-radius: 12px;
+        border-radius: 25px;
+        box-shadow: 0 0 35px rgba(99, 123, 174, 0.6);
     }
 
     #innerform {
@@ -214,22 +215,8 @@ body {
   }
 
          @media (max-height: 1000px) {
-      #formbox {
-          height: 500px;
-      }
-      .out img {
-        height: 110px;
-      }
   }
 
   @media (max-height: 800px) {
-    #formbox {
-      transform: scale(0.75);
-      margin: 0;
-      position: absolute;
-      top: 20%;
-      left: 10%;
-      
-    }
   }
 
