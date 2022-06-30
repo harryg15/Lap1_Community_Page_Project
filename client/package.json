@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest --watchAll",
     "dev": "watchify ./post.js -o bundle.js",
+    "dev2": "watchify ./app.js -o bundle2.js",
     "coverage": "jest --coverage"
   },
   "keywords": [],
