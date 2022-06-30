@@ -1,4 +1,4 @@
-@import url(./harry.css);
+@import url("./harry.css");
 
 .wrapper {
     display: grid;
@@ -12,8 +12,6 @@
     grid-template-columns: repeat(auto-fit, minmax(max(500px, 100%/4), 1fr));
     grid-gap: 50px;
 }
-
-
 
 h1 {
     color:white;
@@ -175,3 +173,5 @@ img {
     75% { transform: rotate(-7deg); }
     100% { transform: rotate(0deg); }
  }
+
+ 

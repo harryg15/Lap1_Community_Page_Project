@@ -1,4 +1,5 @@
 
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Yellowtail&display=swap');
 @font-face {
     font-family: AstroSpace;
@@ -15,7 +16,7 @@ body {
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     background-color: #212c3b;
-    /* min-height: 100vh; */
+    animation: transitionIn 1s
 }
 header {
     background-color: #141b25;
@@ -56,6 +57,7 @@ header {
     background-color: rgb(106, 90, 255);
     padding: 9px 20px;
     border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
 }
 .links li a.create:hover {
     background-color: #047e85;
@@ -70,6 +72,7 @@ header {
     text-transform: uppercase;
     transition: all 0.35s linear 0s;
     padding-bottom: 6px;
+    font-family: 'Montserrat', sans-serif;
 }
 .links li a.feed:hover {
     color: rgb(128, 121, 191);
@@ -274,9 +277,7 @@ header {
     margin-bottom: 0;
 }
 
-body {
-    animation: transitionIn 1s
-} 
+
 @keyframes transitionIn {
     from {
         opacity: 0;
