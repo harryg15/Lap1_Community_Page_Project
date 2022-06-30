@@ -1,10 +1,27 @@
-.card {
-    padding: 1rem;
-    border: 1px solid black;
-    margin: 1rem;
-    }
-
-    img {
-        height: 100px;
-        width: 100px;
-    }
+.wrapper {
+    display: grid;
+    /* border-style: 15px dashed white; */
+    margin: 10px;
+    padding: 20px;
+    /* grid-template-columns: 1fr 1fr; */
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+    grid-gap: 20px;
+}
+.formbox1 {
+    height: 300px;
+    width: 400px;
+    text-align: center;
+    border: solid rgb(85, 85, 85);
+    background-color: #141B25;
+    border-radius: 50px;
+    color: #FFFFFF;
+}
+.formbox2 {
+    height: 200px;
+    width: 400px;
+    text-align: center;
+    border: solid rgb(85, 85, 85);
+    background-color: #141B25;
+    border-radius: 50px;
+    color: #FFFFFF;
+}
