@@ -134,6 +134,7 @@ img {
     max-width: 80%;
     float: left;
     margin-left: 12%;
+    box-shadow: 0 4px 20px rgba(9, 164, 115, 0.2);
 }
 
 .mainDiv .newSubmit:hover {
@@ -153,12 +154,12 @@ img {
     position: absolute;
     opacity: 0;
     top: 0;
-    right: -20px;
+    right: -10px;
     transition: 0.5s;
   }
   
   .newSubmit:hover span {
-    padding-right: 25px;
+    padding-right: 17px;
   }
   
   .newSubmit:hover span:after {
