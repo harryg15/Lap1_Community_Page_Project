@@ -120,26 +120,23 @@ Do you have a story to tell, or a funny joke? Use Connekt to tell others whateve
 - [x] design using Lucid
 - [x] fill Trello board
 
-### functionality
+### Functionality
 
 - [x] anonymous posts
-- [x] character limit 500 characters
 - [x] intergrate giphy api
 - [x] view other people's entries
 - [x] react to post with an emoji
 - [x] comment on other people's posts
 
-### technical
+### Technical
 
-- [x] 60% test coverage
-- [x] deploys on netlify
+- [x] 60% test coverage (minimum)
+- [x] deploys on netlify 
 
-### technologies
+### Technologies
 
 - [x] express
 - [x] cors
-- [x] concurrently -DEV
-- [x] watchify -DEV
 - [x] jest -DEV
 - [x] supertest -DEV
 - [x] nodemon -DEV
