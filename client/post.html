@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,12 +8,19 @@
     <title>Create A Post</title>
     <link rel="stylesheet" href="./post.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
     <script defer src="./post.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script defer
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
 
 </head>
+
 <body>
     <header>
         <!--Navbar-->
@@ -40,37 +48,58 @@
 
     <div>
         <form action="/action_page.php">
-          <label for="fname" id="textarea-hidden">Textarea-Hidden</label>
+            <label for="fname" id="textarea-hidden">Textarea-Hidden</label>
         </form>
-      </div>
-     <!--Create Post Section--> 
-<div id="formbox">
-    <div id="innerform">
-        <form>
-            <h1>Create Post</h1>
-            <p>Title</p>
-            <textarea id="title-message" placeholder="Give your post a topic..." required></textarea>
+        <!--Create Post Section-->
+        <div id="formbox">
+            <div id="innerform">
+                <form>
+                    <h1>Create Post</h1>
+                    <p>Title</p>
+                    <textarea id="title-message" placeholder="Give your post a topic..." required></textarea>
 
-            <p>Blog Post</p>
-            <textarea id="blog-message" placeholder="Write Something... (max. 3000 characters)" maxlength="3000" required></textarea>
+                    <p>Blog Post</p>
+                    <textarea id="blog-message" placeholder="Write Something... (max. 3000 characters)" maxlength="3000"
+                        required></textarea>
 
-            <p id="giphy-title">Giphy</p>
-            <textarea id="giphy" placeholder="Type a phrase to search a relevant gif..."></textarea>
+                    <p id="giphy-title">Giphy</p>
+                    <textarea id="giphy" placeholder="Type a phrase to search a relevant gif..."></textarea>
 
-                <button id="gif-search-btn">Search Gif</button>
-            
-            <div id="div-change-btn"></div>
-            <p id="gap"></p>
+                    <button id="gif-search-btn">Search Gif</button>
 
-            <div id="outer-div-out">
-            <div class="out"></div>
+                    <div id="div-change-btn"></div>
+                    <p id="gap"></p>
+
+                    <div id="outer-div-out">
+                        <div class="out"></div>
+                    </div>
+                    <button class="button" id="mainButton"><span>Submit</span></button>
+                    <img id="gifFetched" src="">
+
+                </form>
             </div>
-            <button class="button"><span>Submit</span></button>
-
-        </form>
+        </div>
     </div>
-</div>
+
+
+    <!-- Footer
+    <div class="footer">
+        <div class="footer-basic">
+        <footer>
+            <div class="social"><a href="https://github.com/harryg15/Lap1_Community_Page_Project" target="_blank"><i
+                        class="icon ion-social-github"></i></a></div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="./connekt.html" target="_blank">Connekt</a></li>
+                <li class="list-inline-item"><a href="index.html" target="_blank">Feed</a></li>
+                <li class="list-inline-item"><a href="post.html" target="_blank">Create Post</a></li>
+            </ul>
+            <p class="copyright">Connekt © 2022</p>
+            <p class="name">Harry, Saamiya, Ali, Rameez</p>
+        </footer>
+    </div>
+     -->
 
 
 </body>
+
 </html>

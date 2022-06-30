@@ -2,34 +2,176 @@
 
 .wrapper {
     display: grid;
+    justify-content: center;
     /* border-style: 15px dashed white; */
     margin: 10px;
     padding: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
     /* grid-template-columns: 1fr 1fr; */
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(max(500px, 100%/4), 1fr));
+    grid-gap: 50px;
 }
 
-.formbox1 {
-    height: 300px;
-    width: 400px;
-    text-align: center; 
-    border: solid rgb(85, 85, 85);
-    background-color: #141b25;
-    border-radius: 50px;
-    color: #ffffff;
-    position: relative; 
-    left: 150px; 
-    top:30px
 
-}
 
-/* .formbox2 {
-    height: 200px;
-    width: 400px; 
+h1 {
+    color:white;
     text-align: center;
-    border: solid rgb(85, 85, 85);
+}
+
+.post-title {
+    padding-top: 20px;
+}
+
+#your-feed-title {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/*For comments below emojis*/
+p {
+    color:white;
+    text-align: left;
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px;
+    border-style: solid;
+    border-color: #047e85;
+    border-radius: 20px 20px 20px 1px;
+    padding: 20px 20px 20px 20px;
+    background: #047e85;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+/*Blog Content*/
+.mainDiv .description {
+    text-align: left;
+    max-width: 80%;
+    border: none;
+    background: none;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.75);
+    
+}
+
+.mainDiv {
+    border-style: solid;
+    border-color: rgb(135, 135, 135);
+    margin-bottom: 100px;
     background-color: #141b25;
-    border-radius: 50px;
-    color: #ffffff;
-} */
+    border-radius: 20px;
+    text-align: center;
+   
+    justify-content: center;
+}
+
+.commentInput {
+    margin-bottom: 10px;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.75);
+}
+
+/*Emojis*/
+.mainDiv button {
+        color: white;
+        text-decoration: none;
+        border: none;
+        font-size: 15px;
+        transition: all 0.35s linear 0s;
+        padding: 7px 15px;
+        background-color: rgb(106, 90, 255);
+        border-radius: 10px;
+        cursor: pointer;
+        margin: 20px 5px ;
+        max-width: 80%;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 1);
+}
+
+/*Emoji Hover*/
+.mainDiv button:hover {
+    background-color: #047e85;
+    color: white;
+    border-bottom: none;
+    animation: jiggle 0.55s ease-in infinite;
+}
+
+/*(Textarea for commenting on posts)*/
+.commentInput {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 55px;
+    margin-bottom: auto;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #212c3b;
+    box-shadow: none;
+    padding-left: 5px;
+    padding-top: 5px;
+    height: 50px;
+    color: white;
+    width: 75%;
+    
+}
+
+.commentInput::placeholder {
+    font-style: italic;
+}
+
+
+/*Comment Button Styling & Animation*/
+.mainDiv .newSubmit {
+    background-color: rgb(9, 164, 115);
+    transition: all 0.5s;
+    max-width: 80%;
+    float: left;
+    margin-left: 12%;
+    box-shadow: 0 4px 20px rgba(9, 164, 115, 0.2);
+}
+
+.mainDiv .newSubmit:hover {
+    background-color: #047e85;
+    animation: none;
+}
+
+.newSubmit span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .newSubmit span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -10px;
+    transition: 0.5s;
+  }
+  
+  .newSubmit:hover span {
+    padding-right: 17px;
+  }
+  
+  .newSubmit:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+
+@keyframes jiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(7deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-7deg); }
+    100% { transform: rotate(0deg); }
+ }
