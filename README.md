@@ -5,11 +5,6 @@ Do you have a story to tell, or a funny joke? Use Connekt to tell others whateve
 
 (insert image here)
 
-The anonymous blogging site for your craziest stories! <br>
-Want to tell people about your wildest conspiracy theories? **_Go for it!_** <br>
-Want to see what people think of your new short story? **_Get it submitted!_** <br>
-Even if you just want to tell the world about the fact you eat cold baked beans without them tracing it back to you, then this is still the perfect place to do it!
-
 ## Table of Contents
 
 - [Installation & Usage](#installation--usage)
