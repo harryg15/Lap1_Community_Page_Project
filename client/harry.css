@@ -1,8 +1,10 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Yellowtail&display=swap');
 @font-face {
     font-family: AstroSpace;
     src: url(./AstroSpace-eZ2Bg.ttf);
 }
+
 html {
     /* height: 100%; */
     background-color: #212c3b;
@@ -270,4 +272,19 @@ header {
     font-size: 13px;
     color: #aaa;
     margin-bottom: 0;
+}
+
+body {
+    animation: transitionIn 1s
+} 
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: rotateX(-10deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotateX(0);
+    }
 }
