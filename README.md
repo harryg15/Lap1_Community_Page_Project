@@ -60,7 +60,7 @@ Do you have a story to tell, or a funny joke? Use Connekt to tell others whateve
 
 #### HTML/CSS/JS Tools
 
-- Watchify
+-
 
 ## Changelog
 
