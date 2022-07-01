@@ -31,7 +31,8 @@ Do you have a story to tell, or a funny joke? Use Connekt to tell others whateve
 ### Local Usage
 
 - Run `npm start` to compile the source code
-- Go in to `index.html` and start a live server
+- Go in to `connekt.html` and start a live server for the home page
+- Navigate through the navbar for the other html pages
 
 ### Deployment
 
@@ -60,7 +61,7 @@ Do you have a story to tell, or a funny joke? Use Connekt to tell others whateve
 
 #### HTML/CSS/JS Tools
 
--
+- Watchify
 
 ## Changelog
 
@@ -80,7 +81,7 @@ Do you have a story to tell, or a funny joke? Use Connekt to tell others whateve
 
 #### JavaScript
 
-(what we did with our GET, POST requests etc)
+- 
 
 ## Wins & Challenges
 
@@ -100,7 +101,8 @@ Do you have a story to tell, or a funny joke? Use Connekt to tell others whateve
 
 ## Bugs
 
-- 
+- Emoji button doesn't allow two people to click on it at the same time
+- Emoji button won't count one person's like if two people press it at the same time without refreshing the page
 
 ## Goals for the Future!
 
@@ -144,3 +146,7 @@ Do you have a story to tell, or a funny joke? Use Connekt to tell others whateve
 #### Fun extras
 
 - [x] Favicon!
+
+#### Contributors to README file
+
+- Saamiya, Rameez, Ali & Harry 

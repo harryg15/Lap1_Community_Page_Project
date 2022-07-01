@@ -9,7 +9,7 @@
     padding-left: 100px;
     padding-right: 100px;
     /* grid-template-columns: 1fr 1fr; */
-    grid-template-columns: repeat(auto-fit, minmax(max(500px, 100%/4), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(max(300px, 100%/4), 1fr));
     grid-gap: 50px;
 }
 
