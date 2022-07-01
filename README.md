@@ -1,9 +1,9 @@
 # Welcome to Connekt!
 
-Connekt is the anonymous blogging site to talk about whatever you want!
-Do you have a story to tell, or a funny joke? Use Connekt to tell others whatever you want, at a touch of a button.
-
-(insert image here)
+Connekt is the anonymous blogging site to talk about whatever you want! 
+Have a crazy story or a funny joke to tell?
+Or maybe you want to share a controversial opinion...like Harry Maguire is the best football player in the world?
+Then Connekt is the right platform for you! Tell others whatever you want, at a touch of a button.
 
 ## Table of Contents
 
