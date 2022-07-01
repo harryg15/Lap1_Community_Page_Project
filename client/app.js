@@ -1,4 +1,4 @@
-let section = document.querySelector("section")
+let section = document.querySelector("div")
 
 var emoji1Update = function (){}
 var emoji2Update = function (){}
@@ -18,7 +18,7 @@ function init () {
 }
 
 function mainLoop (result, section) {
-    section = document.querySelector("section")
+    section = document.querySelector("div")
     for (let i = result.length-1; i>=0; i--){
         const newDiv = document.createElement("div")
         let id = i + 1
@@ -26,7 +26,9 @@ function mainLoop (result, section) {
         newDiv.classList = "mainDiv"
         const newTitle = document.createElement("h1")
         newTitle.textContent = result[i].title
+        newTitle.classList = "post-title"
         const newText = document.createElement("p")
+        newText.classList = "description"
         newText.textContent = result[i].text
         const newGif = document.createElement("img")
         newGif.src = result[i].giphy
@@ -157,12 +159,16 @@ function createComments (result, id){
         newComment.textContent = result[i].comment
         newDiv.append(newComment)
     }
-    const newBox = document.createElement("input")
+    const newBox = document.createElement("textArea")
     newBox.id = `a${id}`
     newBox.classList = "commentInput"
+    newBox.placeholder = "Any thoughts? Post a comment here..."
     const newSubmit = document.createElement("button")
+    const spanSubmit = document.createElement("span")
     newSubmit.id = `b${id}`
-    newSubmit.textContent = "submit"
+    newSubmit.textContent = "Comment"
+    newSubmit.classList = "newSubmit"
+    newSubmit.appendChild(spanSubmit)
     newDiv.append(newBox, newSubmit)
     post.append(newDiv)
     const button = document.getElementById(`b${id}`)

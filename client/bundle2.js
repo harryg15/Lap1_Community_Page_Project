@@ -1,5 +1,5 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-let section = document.querySelector("section")
+let section = document.querySelector("div")
 
 var emoji1Update = function (){}
 var emoji2Update = function (){}
@@ -19,7 +19,7 @@ function init () {
 }
 
 function mainLoop (result, section) {
-    section = document.querySelector("section")
+    section = document.querySelector("div")
     for (let i = result.length-1; i>=0; i--){
         const newDiv = document.createElement("div")
         let id = i + 1
@@ -27,7 +27,9 @@ function mainLoop (result, section) {
         newDiv.classList = "mainDiv"
         const newTitle = document.createElement("h1")
         newTitle.textContent = result[i].title
+        newTitle.classList = "post-title"
         const newText = document.createElement("p")
+        newText.classList = "description"
         newText.textContent = result[i].text
         const newGif = document.createElement("img")
         newGif.src = result[i].giphy
@@ -158,12 +160,16 @@ function createComments (result, id){
         newComment.textContent = result[i].comment
         newDiv.append(newComment)
     }
-    const newBox = document.createElement("input")
+    const newBox = document.createElement("textArea")
     newBox.id = `a${id}`
     newBox.classList = "commentInput"
+    newBox.placeholder = "Any thoughts? Post a comment here..."
     const newSubmit = document.createElement("button")
+    const spanSubmit = document.createElement("span")
     newSubmit.id = `b${id}`
-    newSubmit.textContent = "submit"
+    newSubmit.textContent = "Comment"
+    newSubmit.classList = "newSubmit"
+    newSubmit.appendChild(spanSubmit)
     newDiv.append(newBox, newSubmit)
     post.append(newDiv)
     const button = document.getElementById(`b${id}`)

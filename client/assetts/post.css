@@ -1,12 +1,15 @@
 /*For Previous Home Page Styling*/
 
-@import url("harry.css");
+@import url(./harry.css);
 
 
 
 
 /*Create A Post Page*/
 
+body {
+  animation: transitionIn 0.75s
+}
 
     #formbox {
         height: 750px;
@@ -15,13 +18,13 @@
         margin: 0;
         text-align: center;
         border: solid rgb(85, 85, 85);
-        margin: 0;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 60px;
+        margin-bottom: 10%;
         background-color: #141b25;
-        border-radius: 12px;
+        border-radius: 25px;
+        box-shadow: 0 0 35px rgba(99, 123, 174, 0.6);
     }
 
     #innerform {
@@ -29,11 +32,10 @@
         width: 450px;
         display: block;
         text-align: center;
-        margin: 0;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10%;
+        margin-bottom: 20%;
         
     }
 
@@ -200,23 +202,20 @@
         100% { transform: rotate(0deg); }
      }
 
+     @keyframes transitionIn {
+      from {
+          opacity: 0;
+          transform: rotateX(-10deg);
+      }
+  
+      to {
+          opacity: 1;
+          transform: rotateX(0);
+      }
+  }
+
          @media (max-height: 1000px) {
-      #formbox {
-          height: 500px;
-      }
-      .out img {
-        height: 110px;
-      }
   }
 
   @media (max-height: 800px) {
-    #formbox {
-      transform: scale(0.75);
-      margin: 0;
-      position: absolute;
-      top: 20%;
-      left: 10%;
-      
-    }
   }
-
