@@ -95,7 +95,7 @@ Then Connekt is the right platform for you! Tell others whatever you want, at a 
 - Fully responsive website working on desktop
 - Can select emojis avaliable on posts
 - Integrating the Giphy API
-- Testing at ?% coverage
+- Testing at 75% coverage (client) & 82% coverage (server)
 - Sleek style to our posts
 
 ### Challenges
