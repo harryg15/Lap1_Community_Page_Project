@@ -11,15 +11,20 @@ body {
   animation: transitionIn 0.75s
 }
 
+#wrapper {
+  display: grid;
+  margin: 10px;
+  padding: 20px;
+  padding-left: 10%;
+  padding-right: 10%;
+  grid-template-columns: 1fr;
+  grid-gap: 50px;
+}
+
     #formbox {
-        height: 750px;
-        width: 500px;
-        display: block;
-        margin: 0;
-        text-align: center;
         border: solid rgb(85, 85, 85);
-        margin-left: auto;
-        margin-right: auto;
+        padding-left: 20px;
+        padding-right: 20px;
         margin-top: 60px;
         margin-bottom: 10%;
         background-color: #141b25;
@@ -27,10 +32,26 @@ body {
         box-shadow: 0 0 35px rgba(99, 123, 174, 0.6);
     }
 
+    @media (min-width: 1000px) {
+      #wrapper {
+        padding-left: 20%;
+        padding-right: 20%;
+      }
+    }
+    @media (min-width: 1400px) {
+      #wrapper {
+        padding-left: 30%;
+        padding-right: 30%;
+      }
+    }
+    @media (min-width: 1900px) {
+      #wrapper {
+        padding-left: 35%;
+        padding-right: 35%;
+      }
+    }
+
     #innerform {
-        height: 650px;
-        width: 450px;
-        display: block;
         text-align: center;
         margin-left: auto;
         margin-right: auto;

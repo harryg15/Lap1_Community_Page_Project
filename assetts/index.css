@@ -13,6 +13,12 @@
     grid-gap: 50px;
 }
 
+@media (max-width: 768px) {
+    .wrapper {
+        grid-template-columns: repeat(auto-fit, minmax(max(350px, 100%/4), 1fr));
+    }
+}
+
 h1 {
     color:white;
     text-align: center;
